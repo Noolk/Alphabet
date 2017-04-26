@@ -6,10 +6,12 @@ struct words
      char word[10]; 
 };
 
+void InsertSort(char A[][10],int n);
+
 int main()
 {
    setlocale(LC_ALL, "RUS");
-   int n = 0;
+   int n = 0, i;
    FILE *bf1;
    printf ("Введите количество записей: ");
    scanf("%d", &n);
@@ -34,6 +36,28 @@ int main()
     char B[n][10];      
     for (i=0;i<n;i++)
     strcpy(B[i],A[i].word);
+    printf ("\n");
+    InsertSort(B,n);
+    for (i=0;i<n;i++)
+     {
+        printf ("%s\n", B[i]);
+     }
+}
+
+void InsertSort(char A[][10], int n) 
+{
+	int j, i; char t[10];
+	for (i = 1; i < n; i++) 
+	 {
+	  strcpy(t,A[i]);
+	  j = i - 1;
+	  while ((j >= 0) && (strcmp(t,A[j])<0)) 
+	   {
+	     strcpy(A[j+1],A[j]);
+	     j = j - 1;				
+	   }
+	strcpy(A[j+1],t);	
+	 }
 }
 
 
