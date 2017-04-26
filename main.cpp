@@ -38,10 +38,12 @@ int main()
     strcpy(B[i],A[i].word);
     printf ("\n");
     InsertSort(B,n);
-    for (i=0;i<n;i++)
+    bf2 = fopen ("sorted.txt", "w");
+    for (i = 0; i < n; i++)
      {
-        printf ("%s\n", B[i]);
+       fwrite (&B[i], sizeof(B), 1, bf2);
      }
+    fclose(bf2);
 }
 
 void InsertSort(char A[][10], int n) 
