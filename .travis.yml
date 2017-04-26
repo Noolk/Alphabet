@@ -2,4 +2,8 @@ language: c++
 
 compiler: g++
 
+script: make clean
+
 script: make
+
+script: make test
