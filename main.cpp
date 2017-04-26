@@ -31,6 +31,9 @@ int main()
        if (A[i].word != 0)
        printf ("%s\n", A[i].word);
      }
+    char B[n][10];      
+    for (i=0;i<n;i++)
+    strcpy(B[i],A[i].word);
 }
 
 
