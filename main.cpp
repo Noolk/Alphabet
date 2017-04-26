@@ -22,6 +22,15 @@ int main()
        fwrite (&A[i], sizeof(A), 1, bf1);
      }  
     fclose (bf1);
+    printf ("\n");
+    bf1 = fopen ("source.txt", "r");
+    printf ("Исходные слова: \n\n");
+    for (i = 0; i < n; i++)
+     {
+       fread (&A[i], sizeof(A), 1, bf1);
+       if (A[i].word != 0)
+       printf ("%s\n", A[i].word);
+     }
 }
 
 
