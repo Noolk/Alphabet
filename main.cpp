@@ -3,5 +3,8 @@
 
 int main()
 {
-	return 0;
+   setlocale(LC_ALL, "RUS");
+   int n = 0;
+   printf ("Введите количество записей: ");
+   scanf("%d", &n);
 }
